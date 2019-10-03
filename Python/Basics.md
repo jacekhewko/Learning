@@ -32,7 +32,7 @@ print(variable + ' ' + anothervar)
 
 ## **Operators**: 
 
-`>`, `<`, `=`, `*`, `+`, `-`
+`>`, `<`, `*`, `+`, `-`
 
 `%` (remainder) - `12 % 3 = 0`, because 12 can fit in 3 zero times. `3 % 12 = 4`.
 
@@ -41,6 +41,14 @@ print(variable + ' ' + anothervar)
 `//` - returns result as an integer, a whole number
 
 `in` - Returns `True` or `False` whether it finds that one item is a part of another or not. For example `print("fri" in "friday")` returns `True`.
+
+`==` - checks if both values are the same
+
+`=` - assigns a value
+
+`!=` - checks whether values are not the same
+
+`>=` - checks if value is greater than or the same
 
 ## **Expressions**:
 
@@ -83,7 +91,7 @@ In Python3, there is no longer `long` data type. `Int` data type behaves like `l
 - Float (real number, eg. `1.12`). Don't use it untill you really need it.
 - Strings (Sequence of characters that you can put together)
 
-## **More about strings**:
+## **Strings**:
 
 `parrot = "Norwegian Blue"`
 
@@ -116,7 +124,7 @@ In Python3, there is no longer `long` data type. `Int` data type behaves like `l
 `print("day" in today)` = `True`
 
 
-## **String formatting**:
+### **String formatting**:
 
 You can't print string with a number by using `+` operator in Python, as Python will crash trying to add a number to a string. To do so, you can use `string function` also known as a `str method`:
 
@@ -203,3 +211,87 @@ for i in range(1, 12):
 ```
 print("Pi is approximately %12.50f" % (22 / 7))
 ```
+
+## **Blocks and indentention**
+
+A Python program is constructed from code blocks. A block is a piece of Python program text that is executed as a unit.
+
+The following are blocks: a module, a function body, and a class definition. Each command typed interactively is a block. A script file (a file given as standard input to the interpreter or specified as a command line argument to the interpreter) is a code block. A script command (a command specified on the interpreter command line with the -c option) is a code block.
+
+<img src="imgs/blocks.png" width="30%">
+
+Python programs get structured through indentation, i.e. code blocks are defined by their indentation.
+
+All statements with the same distance to the right belong to the same block of code, i.e. the statements within a block line up vertically. The block ends at a line less indented or the end of the file. If a block has to be more deeply nested, it is simply indented further to the right.
+
+## **Method vs Function**
+
+### **Function**
+A function is a block of code to carry out a specific task, will contain its own scope and is called by name. All functions may contain zero(no) arguments or more than one arguments. On exit, a function can or can not return one or more values.
+
+Basic function syntax:
+```
+def functionName( arg1, arg2,….):
+   …….
+   # Function_body
+   ……..
+```
+
+Let’s create our own (user), a very simple function called sum(user can give any name he wants)”. Function “sum” is having two arguments called num1 and num2 and will return the sum of the arguments passed to the function(sum). When we call the function (sum) with values(arguments) 5 and 6, it returns 11.
+
+```
+def sum(num1, num2):
+   return (num1 + num2)
+```
+
+Output:
+```
+>>> sum(5,6)
+11
+```
+So from above, we see the ‘return’ statement returns a value from python function.
+
+The function allows us to implement code reusability. There are three kinds of functions −
+1. Built-in functions ( As the name suggests, these functions come with the Python language, for example, help() to ask for any help, max()- to get maximum value, type()- to return the type of an object and many more.)
+2. User-defined functions ( These are the functions that users create to help them, like the “sum” function we have created above).
+3. Anonymous Functions (also called lambda functions and unlike normal function which is defined using def keyword are defined using lambda keyword).
+
+### **Method (more about it later on - this is just to see the difference)**
+
+A method in python is somewhat similar to a function, except it is associated with object/classes. Methods in python are very similar to functions except for two major differences.
+
+The method is implicitly used for an object for which it is called.
+
+The method is accessible to data that is contained within the class.
+
+General Method Syntax:
+```
+class ClassName:
+   def method_name():
+      …………..
+      # Method_body
+      ………………
+```
+
+Let’s understand the method through one simple code:
+```
+class Pet(object):
+   def my_method(self):
+      print("I am a Cat")
+cat = Pet()
+cat.my_method()
+```
+
+Output:
+```
+I am a Cat
+```
+In the above code, we first defined class “Pet”. Then we created the object “cat” from this blueprint. Next, we call our custom method called my_method with the object(.i.e. cat).
+
+
+**In Short, a method is a function which belongs to an object.**
+
+### **Sources used in this file:**
+- Learn Python Programming Masterclass (https://www.udemy.com/python-the-complete-python-developer-course/)
+- Structuring with Indentation (https://www.python-course.eu/python3_blocks.php)
+- Difference between Method and Function in Python (https://www.tutorialspoint.com/difference-between-method-and-function-in-python)
